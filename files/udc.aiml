@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>I have no answer for that.</template>
+  </category>
+  
+<!-- These categories will cover the bot introducing itself -->
+  <category>
+    <pattern>Hello</pattern>
+    <template>
+        <random>
+            <li>Hi there!</li>
+            <li>Hello!</li>
+            <li>Hey there!</li>
+            <li>Hey!</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>HI</pattern>
+    <template><srai>HELLO</srai></template>
+</category>
+
+<category>
+    <pattern>HEY</pattern>
+    <template><srai>HELLO</srai></template>
+</category>
+
+<!-- These categories will be the foundation for leading the student's conversation. 
+Asking the fundamental questions before moving into specifics-->
+
+</aiml>

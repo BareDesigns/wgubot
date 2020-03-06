@@ -116,4 +116,32 @@
     Systems Software Developer!</template>
 </category>
 
+<!-- SHUTDOWN THE BOT/SAY GOODBYE -->
+  <category>
+    <pattern>BYE</pattern>
+    <template>
+        <random>
+            <li>Goodbye <get name = "firstname" />!</li>
+            <li>Thanks for stopping by!</li>
+            <li>Come back soon <get name = "firstname" /></li>
+            <li>Thank You <get name = "firstname" />!</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>GOODBYE</pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
+<category>
+    <pattern>EXIT</pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
+<category>
+    <pattern>CLOSE</pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
 </aiml>

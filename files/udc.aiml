@@ -7,13 +7,13 @@
   
 <!-- These categories will cover the bot introducing itself -->
   <category>
-    <pattern>Hello</pattern>
+    <pattern>HELLO</pattern>
     <template>
         <random>
-            <li>Hi there!</li>
-            <li>Hello!</li>
-            <li>Hey there!</li>
-            <li>Hey!</li>
+            <li>Hi there! What is your name?</li>
+            <li>Hello! What is your name?</li>
+            <li>Hey there! What is your name?</li>
+            <li>Hey! What is your name?</li>
         </random>
     </template>
 </category>
@@ -28,7 +28,92 @@
     <template><srai>HELLO</srai></template>
 </category>
 
-<!-- These categories will be the foundation for leading the student's conversation. 
-Asking the fundamental questions before moving into specifics-->
+<category>
+    <pattern>HELLO_</pattern>
+    <template><srai>HELLO</srai></template>
+</category>
+
+<category>
+    <pattern>HI *</pattern>
+    <template><srai>HELLO</srai></template>
+</category>
+
+<category>
+    <pattern>HEY *</pattern>
+    <template><srai>HELLO</srai></template>
+</category>
+
+<!-- Get and learn the student's name -->
+<category>
+    <pattern>My name is * *</pattern>
+    <template>Hello <set name="firstName"><star/></set>!
+        Let's get a few questions and answers to help you find a career with a Computer Science degree.<br/>
+        <br></br>
+        Please answer 'Yes' or 'No':<br/>
+        Are you interested in a career that primarily consists of coding?
+        </template>
+</category>
+
+<!-- ANSWER NO: CODING QUESTION -->
+<category>
+    <pattern>NO</pattern>
+    <that>PLEASE ANSWER YES OR NO ARE YOU INTERESTED IN A CAREER THAT PRIMARILY CONSISTS OF CODING</that>
+    <template>Thanks for answering! One more question.<br/>
+    <br></br>
+    Would you enjoy a leadership role?</template>
+</category>
+
+<!-- ANSWER YES: LEADERSHIP QUESTION -->
+<category>
+    <pattern>YES</pattern>
+    <that>WOULD YOU ENJOY A LEADERSHIP ROLE</that>
+    <template>Awesome! Based on your answers, I think you would enjoy a role as a:<br/>
+    Computer Systems Analyst!</template>
+</category>
+
+<!-- ANSWER NO: LEADERSHIP QUESTION -->
+<category>
+    <pattern>NO</pattern>
+    <that>WOULD YOU ENJOY A LEADERSHIP ROLE</that>
+    <template>Thank You! According to the answers you have provided, I think a good career for you is as a:<br/>
+    Database Administrator!</template>
+</category>
+
+<!-- ANSWER YES: CODING QUESTION -->
+<category>
+    <pattern>YES</pattern>
+    <that>PLEASE ANSWER YES OR NO ARE YOU INTERESTED IN A CAREER THAT PRIMARILY CONSISTS OF CODING</that>
+    <template>Very nice! <br/>With that in mind, does working on/with building websites interest you?</template>
+</category>
+
+<!-- ANSWER YES: WEBSITE QUESTION -->
+<category>
+    <pattern>YES</pattern>
+    <that>WITH THAT IN MIND, DOES WORKING ON SLASH WITH BUILDING WEBSITES INTEREST YOU</that>
+    <template>That sounds great! My recommendation for you is a career as a:<br/> Web Developer!</template>
+</category>
+
+<!-- ANSWER NO: WEBSITE QUESTION -->
+<category>
+    <pattern>NO</pattern>
+    <that>WITH THAT IN MIND, DOES WORKING ON SLASH WITH BUILDING WEBSITES INTEREST YOU</that>
+    <template>Another question: Does building applications/programs sound like something you'd enjoy?</template>
+</category>
+
+<!-- ANSWER YES: APPLICATION DEV QUESTION -->
+<category>
+    <pattern>YES</pattern>
+    <that>ANOTHER QUESTION DOES BUILDING APPLICATIONS SLASH PROGRAMS SOUND LIKE SOMETHING YOU HAD ENJOY</that>
+    <template>Thanks for taking the time to answer! Based on your responses, I think you would enjoy a career as a:
+    <br/>Software Applications Developer!</template>
+</category>
+
+<!-- ANSWER NO: APPLICATION DEV QUESTION -->
+<category>
+    <pattern>NO</pattern>
+    <that>ANOTHER QUESTION DOES BUILDING APPLICATIONS SLASH PROGRAMS SOUND LIKE SOMETHING YOU HAD ENJOY</that>
+    <template>Okay! After reviewing your answers, I can recommend a career for you:<br/>
+    Systems Software Developer!</template>
+</category>
 
 </aiml>
